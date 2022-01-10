@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		875940B0278C8D470080B2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875940AF278C8D470080B2F3 /* AppDelegate.swift */; };
-		875940B2278C8D470080B2F3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875940B1278C8D470080B2F3 /* SceneDelegate.swift */; };
-		875940B4278C8D470080B2F3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875940B3278C8D470080B2F3 /* ViewController.swift */; };
-		875940B7278C8D470080B2F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 875940B5278C8D470080B2F3 /* Main.storyboard */; };
 		875940B9278C8D480080B2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 875940B8278C8D480080B2F3 /* Assets.xcassets */; };
 		875940BC278C8D480080B2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 875940BA278C8D480080B2F3 /* LaunchScreen.storyboard */; };
+		875940C6278C8F080080B2F3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875940C4278C8F080080B2F3 /* DashboardViewController.swift */; };
+		875940C7278C8F080080B2F3 /* DashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 875940C5278C8F080080B2F3 /* DashboardViewController.xib */; };
+		875940CA278C92900080B2F3 /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 875940C9278C92900080B2F3 /* car_list.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		875940AC278C8D470080B2F3 /* Quantrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quantrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		875940AF278C8D470080B2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		875940B1278C8D470080B2F3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		875940B3278C8D470080B2F3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		875940B6278C8D470080B2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		875940B8278C8D480080B2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		875940BB278C8D480080B2F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		875940BD278C8D480080B2F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		875940C4278C8F080080B2F3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		875940C5278C8F080080B2F3 /* DashboardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardViewController.xib; sourceTree = "<group>"; };
+		875940C9278C92900080B2F3 /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,31 @@
 		875940AE278C8D470080B2F3 /* Quantrics */ = {
 			isa = PBXGroup;
 			children = (
+				875940C8278C926B0080B2F3 /* JSON */,
+				875940C3278C8EEA0080B2F3 /* Dashboard */,
 				875940AF278C8D470080B2F3 /* AppDelegate.swift */,
-				875940B1278C8D470080B2F3 /* SceneDelegate.swift */,
-				875940B3278C8D470080B2F3 /* ViewController.swift */,
-				875940B5278C8D470080B2F3 /* Main.storyboard */,
 				875940B8278C8D480080B2F3 /* Assets.xcassets */,
 				875940BA278C8D480080B2F3 /* LaunchScreen.storyboard */,
 				875940BD278C8D480080B2F3 /* Info.plist */,
 			);
 			path = Quantrics;
+			sourceTree = "<group>";
+		};
+		875940C3278C8EEA0080B2F3 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				875940C4278C8F080080B2F3 /* DashboardViewController.swift */,
+				875940C5278C8F080080B2F3 /* DashboardViewController.xib */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		875940C8278C926B0080B2F3 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				875940C9278C92900080B2F3 /* car_list.json */,
+			);
+			path = JSON;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +143,8 @@
 			files = (
 				875940BC278C8D480080B2F3 /* LaunchScreen.storyboard in Resources */,
 				875940B9278C8D480080B2F3 /* Assets.xcassets in Resources */,
-				875940B7278C8D470080B2F3 /* Main.storyboard in Resources */,
+				875940CA278C92900080B2F3 /* car_list.json in Resources */,
+				875940C7278C8F080080B2F3 /* DashboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				875940B4278C8D470080B2F3 /* ViewController.swift in Sources */,
 				875940B0278C8D470080B2F3 /* AppDelegate.swift in Sources */,
-				875940B2278C8D470080B2F3 /* SceneDelegate.swift in Sources */,
+				875940C6278C8F080080B2F3 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		875940B5278C8D470080B2F3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				875940B6278C8D470080B2F3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		875940BA278C8D480080B2F3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +302,7 @@
 				INFOPLIST_FILE = Quantrics/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +314,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,7 +330,7 @@
 				INFOPLIST_FILE = Quantrics/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +342,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -7,23 +7,47 @@
 
 import UIKit
 
+struct Car: Decodable {
+    let make: String
+    let model: String
+    let customerPrice: Double
+    let marketPrice: Double
+    let prosList: [String]
+    let consList: [String]
+    let rating: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case make
+        case model
+        case customerPrice
+        case marketPrice
+        case prosList
+        case consList
+        case rating
+    }
+}
+
 class DashboardViewController: UIViewController {
+    
+    var cars: [Car] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        cars = loadCars(filename: "car_list") ?? []
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func loadCars(filename fileName: String) -> [Car]? {
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let jsonData = try decoder.decode([Car].self, from: data)
+                return jsonData
+            } catch {
+                print("error:\(error)")
+            }
+        }
+        return nil
     }
-    */
-
 }
