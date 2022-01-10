@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8720726B278C9BFE001BB399 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720726A278C9BFE001BB399 /* Car.swift */; };
+		8720726F278C9DCB001BB399 /* CarsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720726D278C9DCB001BB399 /* CarsTableViewCell.swift */; };
+		87207270278C9DCC001BB399 /* CarsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8720726E278C9DCB001BB399 /* CarsTableViewCell.xib */; };
 		875940B0278C8D470080B2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875940AF278C8D470080B2F3 /* AppDelegate.swift */; };
 		875940B9278C8D480080B2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 875940B8278C8D480080B2F3 /* Assets.xcassets */; };
 		875940BC278C8D480080B2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 875940BA278C8D480080B2F3 /* LaunchScreen.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		8720726A278C9BFE001BB399 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		8720726D278C9DCB001BB399 /* CarsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewCell.swift; sourceTree = "<group>"; };
+		8720726E278C9DCB001BB399 /* CarsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarsTableViewCell.xib; sourceTree = "<group>"; };
 		875940AC278C8D470080B2F3 /* Quantrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quantrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		875940AF278C8D470080B2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		875940B8278C8D480080B2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +49,15 @@
 				8720726A278C9BFE001BB399 /* Car.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8720726C278C9D8F001BB399 /* CarsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				8720726D278C9DCB001BB399 /* CarsTableViewCell.swift */,
+				8720726E278C9DCB001BB399 /* CarsTableViewCell.xib */,
+			);
+			path = CarsTableViewCell;
 			sourceTree = "<group>";
 		};
 		875940A3278C8D470080B2F3 = {
@@ -80,6 +93,7 @@
 		875940C3278C8EEA0080B2F3 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				8720726C278C9D8F001BB399 /* CarsTableViewCell */,
 				875940C4278C8F080080B2F3 /* DashboardViewController.swift */,
 				875940C5278C8F080080B2F3 /* DashboardViewController.xib */,
 			);
@@ -156,6 +170,7 @@
 				875940B9278C8D480080B2F3 /* Assets.xcassets in Resources */,
 				875940CA278C92900080B2F3 /* car_list.json in Resources */,
 				875940C7278C8F080080B2F3 /* DashboardViewController.xib in Resources */,
+				87207270278C9DCC001BB399 /* CarsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +183,7 @@
 			files = (
 				875940B0278C8D470080B2F3 /* AppDelegate.swift in Sources */,
 				875940C6278C8F080080B2F3 /* DashboardViewController.swift in Sources */,
+				8720726F278C9DCB001BB399 /* CarsTableViewCell.swift in Sources */,
 				8720726B278C9BFE001BB399 /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
