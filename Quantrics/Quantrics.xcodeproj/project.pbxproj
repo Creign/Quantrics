@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8720726B278C9BFE001BB399 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8720726A278C9BFE001BB399 /* Car.swift */; };
 		875940B0278C8D470080B2F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875940AF278C8D470080B2F3 /* AppDelegate.swift */; };
 		875940B9278C8D480080B2F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 875940B8278C8D480080B2F3 /* Assets.xcassets */; };
 		875940BC278C8D480080B2F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 875940BA278C8D480080B2F3 /* LaunchScreen.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8720726A278C9BFE001BB399 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		875940AC278C8D470080B2F3 /* Quantrics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quantrics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		875940AF278C8D470080B2F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		875940B8278C8D480080B2F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87207269278C9BEE001BB399 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8720726A278C9BFE001BB399 /* Car.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		875940A3278C8D470080B2F3 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		875940AE278C8D470080B2F3 /* Quantrics */ = {
 			isa = PBXGroup;
 			children = (
+				87207269278C9BEE001BB399 /* Model */,
 				875940C8278C926B0080B2F3 /* JSON */,
 				875940C3278C8EEA0080B2F3 /* Dashboard */,
 				875940AF278C8D470080B2F3 /* AppDelegate.swift */,
@@ -157,6 +168,7 @@
 			files = (
 				875940B0278C8D470080B2F3 /* AppDelegate.swift in Sources */,
 				875940C6278C8F080080B2F3 /* DashboardViewController.swift in Sources */,
+				8720726B278C9BFE001BB399 /* Car.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

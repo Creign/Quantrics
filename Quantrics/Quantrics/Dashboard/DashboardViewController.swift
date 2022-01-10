@@ -7,26 +7,6 @@
 
 import UIKit
 
-struct Car: Decodable {
-    let make: String
-    let model: String
-    let customerPrice: Double
-    let marketPrice: Double
-    let prosList: [String]
-    let consList: [String]
-    let rating: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case make
-        case model
-        case customerPrice
-        case marketPrice
-        case prosList
-        case consList
-        case rating
-    }
-}
-
 class DashboardViewController: UIViewController {
     
     var cars: [Car] = []
@@ -36,7 +16,10 @@ class DashboardViewController: UIViewController {
 
         cars = loadCars(filename: "car_list") ?? []
     }
-    
+}
+
+// MARK: - Data
+extension DashboardViewController {
     func loadCars(filename fileName: String) -> [Car]? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
             do {
