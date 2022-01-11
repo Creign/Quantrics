@@ -99,13 +99,12 @@ extension DashboardViewController: UITextFieldDelegate {
         
         if makeStr.isEmpty && modelStr.isEmpty {
             filteredCars = cars
-            tableView.reloadData()
         } else {
             let temp = cars.filter({$0.make.lowercased().hasPrefix(makeStr)}).filter({$0.model.lowercased().hasPrefix(modelStr)})
             filteredCars = temp
-            tableView.reloadData()
         }
         
+        tableView.reloadData()
         view.endEditing(true)
         return true
     }

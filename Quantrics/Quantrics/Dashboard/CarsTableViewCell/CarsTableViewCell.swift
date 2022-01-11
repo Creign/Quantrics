@@ -31,14 +31,21 @@ class CarsTableViewCell: UITableViewCell {
         // TODO: make this as custom view with stars
         ratingLabel.text = "Ratings: \(car.rating)"
         
+        // need some optimization, some crash might happen
         fillPros(with: car.prosList)
         fillCons(with: car.consList)
     }
     
     func fillPros(with list: [String]) {
         
-        for v in 1 ..< prosStackView.subviews.count {
-            prosStackView.subviews[v].removeFromSuperview()
+//        for v in 1 ..< prosStackView.subviews.count {
+//            prosStackView.subviews[v].removeFromSuperview()
+//        }
+        
+        for v in 0 ..< prosStackView.subviews.count-1 {
+            if v != 0 {
+                prosStackView.subviews[v].removeFromSuperview()
+            }
         }
         
         let pros = list.filter { $0 != "" }
@@ -54,8 +61,16 @@ class CarsTableViewCell: UITableViewCell {
     
     func fillCons(with list: [String]) {
         
-        for v in 1 ..< consStackView.subviews.count {
-            consStackView.subviews[v].removeFromSuperview()
+//        for v in 1 ..< consStackView.subviews.count {
+//            consStackView.subviews[v].removeFromSuperview()
+//        }
+        
+        if cons.count != 0 {
+            for v in 0 ..< consStackView.subviews.count-1 {
+                if v != 0 {
+                    consStackView.subviews[v].removeFromSuperview()
+                }
+            }
         }
         
         let cons = list.filter { $0 != "" }
