@@ -37,12 +37,15 @@ class CarsTableViewCell: UITableViewCell {
     
     func fillPros(with list: [String]) {
         
+        for v in 1 ..< prosStackView.subviews.count {
+            prosStackView.subviews[v].removeFromSuperview()
+        }
+        
         let pros = list.filter { $0 != "" }
         prosStackView.isHidden = pros.count == 0
         
         for p in pros {
             let view = ProsConsListView()
-            view.frame = prosStackView.subviews[0].frame
             view.descLabel.text = p
             
             prosStackView.insertArrangedSubview(view, at: prosStackView.subviews.count)
@@ -51,13 +54,15 @@ class CarsTableViewCell: UITableViewCell {
     
     func fillCons(with list: [String]) {
         
-        let cons = list.filter { $0 != "" }
+        for v in 1 ..< consStackView.subviews.count {
+            consStackView.subviews[v].removeFromSuperview()
+        }
         
+        let cons = list.filter { $0 != "" }
         consStackView.isHidden = cons.count == 0
         
         for c in cons {
             let view = ProsConsListView()
-            view.frame = consStackView.subviews[0].frame
             view.descLabel.text = c
             
             consStackView.insertArrangedSubview(view, at: consStackView.subviews.count)
