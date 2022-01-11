@@ -12,16 +12,19 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var filterView: UIView!
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var makeFilterTextField: UITextField!
+    @IBOutlet weak var modelFilterTextField: UITextField!
     
     var cars: [Car] = []
+    var filteredCars: [Car] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        filterView.layer.cornerRadius = 5
         
+        setFilterTable()
         setTableView()
         cars = loadCars(filename: "car_list") ?? []
+        filteredCars = cars
     }
 }
 
@@ -32,6 +35,13 @@ private extension DashboardViewController {
                                  bundle: nil), forCellReuseIdentifier: CarsTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func setFilterTable() {
+        filterView.layer.cornerRadius = 5
+        
+        makeFilterTextField.delegate = self
+        modelFilterTextField.delegate = self
     }
 }
 
@@ -58,13 +68,13 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: CarsTableViewCell.identifier, for: indexPath) as? CarsTableViewCell
         
-        cell?.configure(with: cars[indexPath.row])
+        cell?.configure(with: filteredCars[indexPath.row])
 
         return cell ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cars.count
+        return filteredCars.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -78,4 +88,47 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
             cell.hideDetailView()
         }
     }
+}
+
+// MARK: - UITextField
+extension DashboardViewController: UITextFieldDelegate {
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        let makeStr = makeFilterTextField.text ?? "".lowercased()
+        let modelStr = modelFilterTextField.text ?? "".lowercased()
+        
+        if makeStr.isEmpty && modelStr.isEmpty {
+            filteredCars = cars
+            tableView.reloadData()
+        } else {
+            let temp = cars.filter({$0.make.lowercased().hasPrefix(makeStr)}).filter({$0.model.lowercased().hasPrefix(modelStr)})
+            filteredCars = temp
+            tableView.reloadData()
+        }
+        
+        return true
+    }
+    
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//
+//        let makeStr = "\(makeFilterTextField.text ?? "")\(string)".capitalized
+////        let modelStr = modelFilterTextField.text?.lowercased() ?? ""
+//        print(makeStr)
+//
+//        print((makeFilterTextField.text ?? "").count == 0)
+//        if (makeFilterTextField.text ?? "").count == 0 {
+//            cars = loadCars(filename: "car_list") ?? []
+//            tableView.reloadData()
+//        }
+//
+//        let temp = cars.filter({$0.make.hasPrefix(makeStr)})
+//        //.filter({$0.model.hasPrefix(modelStr)})
+//
+//        cars = temp
+//        tableView.reloadData()
+//
+//
+//        return true
+//    }
 }

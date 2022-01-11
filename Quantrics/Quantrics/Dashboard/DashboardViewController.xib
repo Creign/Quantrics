@@ -12,6 +12,8 @@
             <connections>
                 <outlet property="filterView" destination="cqS-6t-ZMJ" id="Dm4-fg-qtl"/>
                 <outlet property="headerLabel" destination="4c6-ir-hUH" id="1BT-WO-Ao4"/>
+                <outlet property="makeFilterTextField" destination="4Ac-a2-CjF" id="B8k-lB-939"/>
+                <outlet property="modelFilterTextField" destination="WlP-Za-6vc" id="is0-sF-I6k"/>
                 <outlet property="tableView" destination="gJK-mS-eHv" id="CHi-b7-x92"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
