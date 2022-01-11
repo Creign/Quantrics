@@ -65,6 +65,9 @@ class CarsTableViewCell: UITableViewCell {
 //            consStackView.subviews[v].removeFromSuperview()
 //        }
         
+        let cons = list.filter { $0 != "" }
+        consStackView.isHidden = cons.count == 0
+        
         if cons.count != 0 {
             for v in 0 ..< consStackView.subviews.count-1 {
                 if v != 0 {
@@ -72,9 +75,6 @@ class CarsTableViewCell: UITableViewCell {
                 }
             }
         }
-        
-        let cons = list.filter { $0 != "" }
-        consStackView.isHidden = cons.count == 0
         
         for c in cons {
             let view = ProsConsListView()
