@@ -93,8 +93,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - UITextField
 extension DashboardViewController: UITextFieldDelegate {
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let makeStr = makeFilterTextField.text ?? "".lowercased()
         let modelStr = modelFilterTextField.text ?? "".lowercased()
         
@@ -107,8 +106,26 @@ extension DashboardViewController: UITextFieldDelegate {
             tableView.reloadData()
         }
         
+        view.endEditing(true)
         return true
     }
+    
+//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//
+//        let makeStr = makeFilterTextField.text ?? "".lowercased()
+//        let modelStr = modelFilterTextField.text ?? "".lowercased()
+//
+//        if makeStr.isEmpty && modelStr.isEmpty {
+//            filteredCars = cars
+//            tableView.reloadData()
+//        } else {
+//            let temp = cars.filter({$0.make.lowercased().hasPrefix(makeStr)}).filter({$0.model.lowercased().hasPrefix(modelStr)})
+//            filteredCars = temp
+//            tableView.reloadData()
+//        }
+//
+//        return true
+//    }
     
 //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
 //
